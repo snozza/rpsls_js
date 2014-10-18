@@ -4,6 +4,8 @@ describe('To play Rock Paper Scissors', function () {
     rock = new Rock();
     scissors = new Scissors();
     paper = new Paper();
+    lizard = new Lizard();
+    spock = new Spock();
   });
 
   describe('types of weapons', function() {
@@ -22,9 +24,13 @@ describe('To play Rock Paper Scissors', function () {
     it('Lizard', function() {
       expect(lizard.type).toEqual('Lizard');
     });
+
+    it('Spock', function() {
+      expect(spock.type).toEqual('Spock');
+    });
   });
 
-  describe('Rules of the game', function() {
+  describe('The Rules of the game', function() {
     beforeEach(function() {
       rules = new Rules();
     });
@@ -98,7 +104,7 @@ describe('To play Rock Paper Scissors', function () {
     });
 
     it('Rock is beaten by Spock', function() {
-      expect(rules.winningChoiceOf(rock, spock)).toEqual(rock);
+      expect(rules.winningChoiceOf(rock, spock)).toEqual(spock);
     });
 
     it('Spock beats scissors', function() {
