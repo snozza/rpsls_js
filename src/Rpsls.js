@@ -1,32 +1,7 @@
-function Rules() {
+Rules = function() {
 }
 
-function Rock() {
-  this.type = "Rock";
-  this.index = 0;
-}
-
-function Paper() {
-  this.type = "Paper";
-  this.index = 1;
-}
-
-function Scissors() {
-  this.type = "Scissors";
-  this.index = 2;
-}
-
-function Lizard() {
-  this.type = "Lizard";
-  this.index = 3;
-}
-
-function Spock() {
-  this.type = "Spock";
-  this.index = 4;
-}
-
-function Draw() {
+Draw = function() {
   this.type = "Draw";
 }
 
