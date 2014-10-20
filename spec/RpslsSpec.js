@@ -37,13 +37,18 @@ describe('To play Rock Paper Scissors', function () {
     });
 
     it('should have two players with default names', function() {
-      expect(game.player1).toEqual("Player1");
-      expect(game.player2).toEqual("Skynet");
+      expect(game.player1.name).toEqual("Player1");
+      expect(game.player2.name).toEqual("Skynet");
     });
 
     it('should be able to have custom names upon new construction', function() {
       game = new Game("Andrew");
       expect(game.player1).toEqual("Andrew");
+    });
+
+    it('computer should generate a random choice', function() {
+      var keys = Object.keys(game.player2.options);
+      expect(keys.indexOf(game.player2.skynetChoice) != -1);
     });
   });
 

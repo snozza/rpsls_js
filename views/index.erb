@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors Lizard Spock</title>
+        <link rel="stylesheet" href="../public/css/reset.css">
+        <link rel="stylesheet" href="../public/css/application.css">
+    </head>
+    <body>
+        <section class='play'>
+        <h1>Rock Paper Scissors Lizard Spock!</h1>
+        
+            <section class='weapons'>
+                <img src="../public/images/rock.png" data-choice="rock">
+                <img src="../public/images/paper.png" data-choice="paper">
+                <img src="../public/images/scissors.png" data-choice="scissors">
+                <img src="../public/images/lizard.png" data-choice="lizard">
+                <img src="../public/images/spock2.jpg" data-choice="spock">
+            </section>
+        <h2>Choose your weapon</h2>
+        </section>    
+            <br>
+            <p id="result"></p>
+            <script src="../public/lib/jquery.min.js"></script>
+            <script src="../public/lib/Game.js"></script>
+            <script src="../public/lib/Player.js"></script>
+            <script>
+
+              var skynet = new Player("Skynet");
+              var player = new Player("Player");
+              var game = new Game(player, skynet);
+
+              $(document).ready(function() {
+                $('.weapons').on('mouseenter', 'img', function() {
+                  $(this).addClass("highlight");
+                });
+                $('.weapons').on('mouseleave', 'img', function() {
+                  $(this).removeClass("highlight");
+                });
+
+                $('.weapons').on('click', 'img', function() {
+                  
+                  $('#result').find('p').slideUp(function () {
+                    $(this).remove();
+                  });
+                  player.choose($(this).data('choice'));
+                  skynet.skynetChoice();
+
+                  $('#result').prepend('<p>' + game.winMessage() + '</p>').slideDown();
+
+                });
+
+              });
+            </script>
+    </body>
+</html>    
+
+
+
+
+
+
+
