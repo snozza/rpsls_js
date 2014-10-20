@@ -8,8 +8,8 @@
     </head>
     <body>
         <section class='play'>
-        <h1>Rock Paper Scissors Lizard Spock!</h1>
         
+        <h1>Live Long and Rock Paper Scissors Lizard</h1>
             <section class='weapons'>
                 <img src="images/rock.png" data-choice="rock">
                 <img src="images/paper.png" data-choice="paper">
@@ -39,10 +39,11 @@
                 });
 
                 $('.weapons').on('click', 'img', function() {
-                  
+                  $(this).animate({'top': '-14px'}, 'fast').animate({'top': '0px'}, 'fast');
                   $('#result').find('p').slideUp(function () {
                     $(this).remove();
                   });
+
                   player.choose($(this).data('choice'));
                   skynet.skynetChoice();
 

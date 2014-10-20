@@ -34,7 +34,7 @@ Lizard = function() {
 Spock = function() {
   this.type = "Spock";
   this.index = 4;
-  this.attack = "Vaporizes";
+  this.attack = "vaporizes";
 }
 
 Draw = function() {
