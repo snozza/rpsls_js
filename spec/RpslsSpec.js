@@ -30,6 +30,23 @@ describe('To play Rock Paper Scissors', function () {
     });
   });
 
+  describe('players in the game', function() {
+
+    beforeEach(function() {
+      game = new Game();
+    });
+
+    it('should have two players with default names', function() {
+      expect(game.player1).toEqual("Player1");
+      expect(game.player2).toEqual("Skynet");
+    });
+
+    it('should be able to have custom names upon new construction', function() {
+      game = new Game("Andrew");
+      expect(game.player1).toEqual("Andrew");
+    });
+  });
+
   describe('The Rules of the game', function() {
     beforeEach(function() {
       rules = new Rules();
