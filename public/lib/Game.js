@@ -43,13 +43,13 @@ Draw = function() {
 
 Game.prototype.winner = function() {
   var winWeapon = this.rules.winningChoiceOf(this.player1.choice, this.player2.choice);
-  if(winWeapon === new Draw()) return [new Draw()];
+  if(winWeapon.type === "Draw") return [winWeapon];
   return this.player1.choice === winWeapon ? [this.player1, this.player2] : [this.player2, this.player1];
 };
 
 Game.prototype.winMessage = function () {
   var result = this.winner();
-  this.msg = result[0] === new Draw ? "It was a draw" : 
+  this.msg = (result[0].type === "Draw") ? "It was a draw" : 
       result[0].name + "\'s " + result[0].choice.type + " " + result[0].choice.attack + 
       " " + result[1].name + "\'s " + result[1].choice.type;
   return this.msg;
