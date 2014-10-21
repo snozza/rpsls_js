@@ -5,4 +5,4 @@ Rock Scissors Paper Lizard Spock in Javascript
 
 Deployed on Heroku:
 
-http://spokety-paper.herokuapp.com/
+http://spockety-paper.herokuapp.com/
